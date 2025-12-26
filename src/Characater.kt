@@ -5,6 +5,8 @@ abstract class Character(
     var weapon: Weapon? = null
         private set
 
+    var inventory = mutableListOf<Loot>()
+
     var health: Int = maxHealth
         private set
 
@@ -43,6 +45,22 @@ abstract class Character(
         } else {
             health = result
             println("Здоровье $name восстановлено на $amount. Стало: $health")
+        }
+    }
+
+    fun pickUpLoot(loot:Loot){
+        when(loot){
+            is Loot.Gold -> {
+               inventory.add(loot)
+               println("$name нашел ${loot.amount} золота")
+            }
+            is Loot.Item -> {
+                inventory.add(loot)
+                println("$name нашел ${loot.item} ")
+            }
+            is Loot.Empty -> {
+               println("Пусто")
+            }
         }
     }
 

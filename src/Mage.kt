@@ -7,13 +7,13 @@ class Mage(name: String,
     val power: Int = maxPower
     override fun calculateDamage(): Int {
         val isCrit:Int = Random.nextInt(100)
-        if( isCrit < 30){
+        return if( isCrit < 30){
             println("ФАЕРБОЛ!")
             val weaponDamage = weapon?.damage ?: 0
-            return power * 2 + weaponDamage
+             power * 2 + weaponDamage
         }else{
             val weaponDamage = weapon?.damage ?: 0
-            return power + weaponDamage
+             power + weaponDamage
         }
     }
 

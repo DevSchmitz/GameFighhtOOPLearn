@@ -48,14 +48,13 @@ abstract class Character(
         }
     }
 
-    fun takeAllloot(chest: Chest){
-        val allLoot = chest.takeAllLoot()
-
-    }
-
     fun lootChest(chest: Chest){
-        val loot = chest.takeloot()
+        val loot = chest.takeLoot()
         pickUpLoot(loot)
+    }
+    fun allLootChest(chest:Chest){
+        val allLoot = chest.takeAllTheLoot()
+
     }
 
     fun pickUpLoot(loot:Loot){
@@ -66,7 +65,7 @@ abstract class Character(
             }
             is Loot.Item -> {
                 inventory.add(loot)
-                println("$name взял из сундука ${loot.item} ")
+                println("$name взял из сундука $loot ")
             }
             is Loot.Empty -> {
                println("Ничего нет")

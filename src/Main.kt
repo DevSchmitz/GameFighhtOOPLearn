@@ -12,6 +12,10 @@ fun main() {
             "\nОружие:${staff}")
     println()
 
+    priest.pickUpLoot(demonChest[0])
+    priest.pickUpLoot(demonChest[0])
+    priest.pickUpLoot(demonChest[0])
+
 
 }
 
